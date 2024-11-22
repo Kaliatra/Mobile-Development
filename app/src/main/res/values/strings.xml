@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kaliatra</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_scan">Pindai</string>
+    <string name="title_dictionary">Kamus</string>
+    <string name="title_profile">Akun</string>
+</resources>
