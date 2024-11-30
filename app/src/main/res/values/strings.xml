@@ -1,7 +1,32 @@
 <resources>
+    <!-- General Strings -->
     <string name="app_name">Kaliatra</string>
+    <string name="gallery">Galeri</string>
+    <string name="analyze">Analisis</string>
+    <string name="camera">Kamera</string>
+    <string name="preview_image">Gambar Pratinjau</string>
+    <string name="history">Riwayat</string>
+
+    <!-- Home Fragment Strings -->
     <string name="title_home">Beranda</string>
+
+    <!-- Scan Fragment Strings -->
     <string name="title_scan">Pindai</string>
+    <string name="title_text_scan">Pindai Aksara Bali Anda</string>
+    <string name="description_text_scan">Gunakan kamera atau pilih gambar dari galeri untuk memindai aksara Bali yang ingin diterjemahkan</string>
+
+    <!-- Dictionary Fragment Strings -->
     <string name="title_dictionary">Kamus</string>
+
+    <!-- Profile Fragment Strings -->
     <string name="title_profile">Akun</string>
+
+    <!-- Result Fragment Strings -->
+    <string name="result">Hasil Analisis</string>
+    <string name="title_text_result">Hasil Analisis Aksara Bali Anda</string>
+    <string name="description_text_result">Dibawah ini merupakan hasil analisi aksara bali yang sudah kamu gambar, foto atau ambil dari galeri</string>
+    <string name="dictionary_photo">foto kamus</string>
+
+
+    <string name="search_hint">Cari Aksara Bali</string>
 </resources>

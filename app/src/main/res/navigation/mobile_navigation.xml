@@ -28,4 +28,10 @@
         android:name="com.dicoding.kaliatra.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.dicoding.kaliatra.ui.result.ResultFragment"
+        android:label="@string/result"
+        tools:layout="@layout/fragment_result" />
 </navigation>
