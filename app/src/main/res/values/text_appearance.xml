@@ -1,0 +1,14 @@
+<resources>
+    <style name="TextAppearance.Montserrat.Regular" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+    <style name="TextAppearance.Montserrat.Bold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+    <style name="TextAppearance.Montserrat.Italic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/montserrat_italic</item>
+    </style>
+    <style name="TextAppearance.Montserrat.SemiBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+</resources>
