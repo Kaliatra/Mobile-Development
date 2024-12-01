@@ -3,20 +3,128 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent">
+
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/text_beranda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/title_beranda"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.Montserrat.SemiBold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_deskripsi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
+
+    <TextView
+        android:id="@+id/text_deskripsi"
+        android:layout_width="337dp"
+        android:layout_height="33dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:text="@string/deskripsi_beranda"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.Montserrat.Italic"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/drawingView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752" />
+
+    <com.dicoding.kaliatra.ui.home.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="374dp"
+        android:layout_height="424dp"
+        android:background="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+        tools:ignore="MissingClass" />
+
+    <Button
+        android:id="@+id/buttoneraser"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="376dp"
+        android:contentDescription="@string/go_to_next"
+        android:drawableLeft="@drawable/ic_eraser"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/drawingView"
+        app:layout_constraintEnd_toStartOf="@+id/buttonX"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
+    <SeekBar
+        android:id="@+id/eraserSizeSeekBar"
+        android:layout_width="227dp"
+        android:layout_height="13dp"
+        android:max="100"
+        android:progress="50"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/drawingView"
+        app:layout_constraintStart_toStartOf="@+id/drawingView"
+        app:layout_constraintTop_toTopOf="@+id/drawingView"
+        app:layout_constraintVertical_bias="0.027"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonColor"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/go_to_next"
+        android:drawableLeft="@drawable/ic_brush"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/drawingView"
+        app:layout_constraintEnd_toStartOf="@+id/buttoneraser"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/drawingView"
+        app:layout_constraintTop_toTopOf="@+id/drawingView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/buttonX"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="376dp"
+        android:contentDescription="@string/go_to_next"
+        android:drawableLeft="@drawable/baseline_close_24"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/drawingView"
+        app:layout_constraintEnd_toEndOf="@+id/drawingView"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="373dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/dark_blue"
+        android:drawableLeft="@drawable/baseline_search_24"
+        android:paddingLeft="140dp"
+        android:paddingRight="140dp"
+        android:text="@string/analisis"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drawingView"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

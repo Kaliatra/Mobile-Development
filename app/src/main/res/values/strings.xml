@@ -7,6 +7,27 @@
     <string name="preview_image">Gambar Pratinjau</string>
     <string name="history">Riwayat</string>
 
+    <!-- Login dan onBoarding String -->
+    <string name="lewati">Lewati</string>
+    <string name="welcome1">Selamat Datang di Kaliatra</string>
+    <string name="deskripsi1">Jelajahi dan terjemahkan aksara Bali dengan mudah menggunakan teknologi Machine Learning. Ubah aksara Bali menjadi teks yang lebih mudah dipahami, baik melalui kamera perangkat atau dengan menggambar aksara untuk diidentifikasi.</string>
+    <string name="go_to_next">Go to next</string>
+    <string name="onboardin2title">Gambar Aksara Bali</string>
+    <string name="desk2">Fitur ini memungkinkan Anda mengenali dan menerjemahkan aksara Bali dengan cepat. Cukup gambar aksara, dan hasilnya langsung muncul. Antarmuka yang sederhana akan membuat proses analisis efisien dan nyaman.</string>
+    <string name="titleonboardin3">Terjemahkan Aksara Bali</string>
+    <string name="desk3">Mengubah aksara Bali menjadi bentuk yang lebih mudah dibaca dan dimengerti. Gunakan fitur terjemahan instan kami untuk mengubah aksara Bali ke bahasa Indonesia dengan hasil yang akurat dan cepat.</string>
+    <string name="login">Masuk!</string>
+    <string name="deskLogin">Aplikasi Kaliatra mewajibkan kamu untuk masuk menggunakan email google</string>
+    <string name="privacyPolice"><![CDATA[Dengan melakukan login maka kamu telah setuju dengan Privacy Policy & Terms of Service]]></string>
+    <string name="deskBTN">Tekan di sini untuk Login</string>
+    <string name="analisis">Analisis</string>
+    <string name="title_beranda">Gambarlah Aksara Bali Anda</string>
+    <string name="deskripsi_beranda">Gambarkan aksara Bali yang ingin diterjemahkan di bawah ini</string>
+    <string name="home_title">Beranda</string>
+    <string name="scan_title">Pindai</string>
+    <string name="dictionary_title">Kamus</string>
+    <string name="profile_title">Akun</string>
+
     <!-- Home Fragment Strings -->
     <string name="title_home">Beranda</string>
 
