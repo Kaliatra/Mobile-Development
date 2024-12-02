@@ -29,4 +29,18 @@
 
 
     <string name="search_hint">Cari Aksara Bali</string>
+    <string name="profile_picture_placeholder">Profile Picture</string>
+    <string name="profile_name_placeholder">John Doe</string>
+    <string name="profile_email_placeholder">johndoe132@gmail.com</string>
+    <string name="dark_mode_icon">Icon dark Mode\n</string>
+    <string name="dark_mode">Mode Gelap</string>
+    <string name="dark_mode_subtitle">Aktifkan tema menjadi mode gelap</string>
+    <string name="change_language_icon">Icon Change Language</string>
+    <string name="change_language">Ubah Bahasa</string>
+    <string name="change_language_subtitle">Ubah bahasa pada aplikasi</string>
+    <string name="arrow_icon">Arrow Icon</string>
+    <string name="about_app_icon">About App Icon</string>
+    <string name="about_app">Tentang Aplikasi</string>
+    <string name="log_out_icon">Log Out Icon</string>
+    <string name="log_out">Keluar</string>
 </resources>
