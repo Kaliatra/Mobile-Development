@@ -1,13 +1,11 @@
 package com.dicoding.kaliatra
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.dicoding.kaliatra.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,17 +18,41 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navController = navHostFragment.navController
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home,
-                R.id.navigation_scan,
-                R.id.navigation_dictionary,
-                R.id.navigation_profile
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.onBoardingFragment1, R.id.onBoardingFragment2, R.id.onBoardingFragment3, R.id.loginFragment -> {
+                    supportActionBar?.hide()
+                    navView.visibility = BottomNavigationView.GONE
+                }
+                R.id.navigation_home -> {
+                    supportActionBar?.show()
+                    supportActionBar?.title = getString(R.string.home_title)
+                    navView.visibility = BottomNavigationView.VISIBLE
+                }
+                R.id.navigation_scan -> {
+                    supportActionBar?.show()
+                    supportActionBar?.title = getString(R.string.scan_title)
+                    navView.visibility = BottomNavigationView.VISIBLE
+                }
+                R.id.navigation_dictionary -> {
+                    supportActionBar?.show()
+                    supportActionBar?.title = getString(R.string.dictionary_title)
+                    navView.visibility = BottomNavigationView.VISIBLE
+                }
+                R.id.navigation_profile -> {
+                    supportActionBar?.show()
+                    supportActionBar?.title = getString(R.string.profile_title)
+                    navView.visibility = BottomNavigationView.VISIBLE
+                }
+                else -> {
+                    supportActionBar?.hide()
+                    navView.visibility = BottomNavigationView.VISIBLE
+                }
+            }
+        }
         navView.setupWithNavController(navController)
     }
 }
