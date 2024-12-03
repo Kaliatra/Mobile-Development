@@ -76,4 +76,7 @@
     <string name="eraser_active">Penghapus Aktif</string>
     <string name="pen_tool_active">Alat Pena Aktif</string>
     <string name="eraser_size">Ukuran Penghapus: %1$.2f</string>
+    <string name="button_delete_description">Button Delete</string>
+    <string name="result_history">Hasil :</string>
+    <string name="img_aksara_history">Image Aksara History</string>
 </resources>
