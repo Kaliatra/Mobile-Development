@@ -23,7 +23,7 @@ class LoginFragment : Fragment() {
     ): View? {
         val binding = inflater.inflate(R.layout.fragment_login, container, false)
 
-        btnLogin = binding.findViewById(R.id.btnLogin)
+        btnLogin = binding.findViewById(R.id.loginButton)
 
         btnLogin.setOnClickListener {
             loginWithGoogle()
