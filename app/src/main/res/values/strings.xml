@@ -73,4 +73,7 @@
     <string name="img_onboarding_1">Image Onboarding 1</string>
     <string name="img_onboarding_2">Image Onboarding 2</string>
     <string name="img_onboarding_3">Image Onboarding 3</string>
+    <string name="eraser_active">Penghapus Aktif</string>
+    <string name="pen_tool_active">Alat Pena Aktif</string>
+    <string name="eraser_size">Ukuran Penghapus: %1$.2f</string>
 </resources>
