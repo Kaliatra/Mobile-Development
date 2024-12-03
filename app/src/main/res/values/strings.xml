@@ -11,7 +11,9 @@
     <string name="lewati">Lewati</string>
     <string name="welcome1">Selamat Datang di Kaliatra</string>
     <string name="deskripsi1">Jelajahi dan terjemahkan aksara Bali dengan mudah menggunakan teknologi Machine Learning. Ubah aksara Bali menjadi teks yang lebih mudah dipahami, baik melalui kamera perangkat atau dengan menggambar aksara untuk diidentifikasi.</string>
-    <string name="go_to_next">Go to next</string>
+    <string name="button_brush">Brush</string>
+    <string name="button_eraser">Eraser</string>
+    <string name="button_clear">Clear</string>
     <string name="onboardin2title">Gambar Aksara Bali</string>
     <string name="desk2">Fitur ini memungkinkan Anda mengenali dan menerjemahkan aksara Bali dengan cepat. Cukup gambar aksara, dan hasilnya langsung muncul. Antarmuka yang sederhana akan membuat proses analisis efisien dan nyaman.</string>
     <string name="titleonboardin3">Terjemahkan Aksara Bali</string>
@@ -21,12 +23,15 @@
     <string name="privacyPolice"><![CDATA[Dengan melakukan login maka kamu telah setuju dengan Privacy Policy & Terms of Service]]></string>
     <string name="deskBTN">Tekan di sini untuk Login</string>
     <string name="analisis">Analisis</string>
-    <string name="title_beranda">Gambarlah Aksara Bali Anda</string>
-    <string name="deskripsi_beranda">Gambarkan aksara Bali yang ingin diterjemahkan di bawah ini</string>
+    <string name="title_text_home">Gambarlah Aksara Bali</string>
+    <string name="description_text_home">Gambarkan aksara Bali yang ingin diterjemahkan di bawah ini</string>
     <string name="home_title">Beranda</string>
     <string name="scan_title">Pindai</string>
     <string name="dictionary_title">Kamus</string>
     <string name="profile_title">Akun</string>
+    <string name="eraser_active">Penghapus Aktif</string>
+    <string name="pen_tool_active">Alat Pena Aktif</string>
+    <string name="eraser_size">Ukuran Penghapus: %1$.2f</string>
 
     <!-- Home Fragment Strings -->
     <string name="title_home">Beranda</string>

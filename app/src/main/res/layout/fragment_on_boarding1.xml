@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.onboarding.OnBoardingFragment1">
 
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="598dp"
@@ -29,7 +30,7 @@
             android:clipToOutline="true"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
-            android:src="@drawable/onboarding1"
+            android:src="@drawable/img_onboarding_1"
             tools:ignore="UnusedAttribute" />
 
     </LinearLayout>
@@ -145,6 +146,6 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/baseline_arrow_circle_right_24"
-            android:contentDescription="@string/go_to_next" />
+            android:contentDescription="@string/button_brush" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

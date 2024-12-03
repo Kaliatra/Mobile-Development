@@ -2,17 +2,12 @@ package com.dicoding.kaliatra.ui.home
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.*
 import android.util.AttributeSet
-import android.widget.Toast
 import android.view.MotionEvent
 import android.view.View
-import kotlinx.coroutines.*
-import kotlin.math.pow
-import kotlin.math.sqrt
+import android.widget.Toast
+import com.dicoding.kaliatra.R
 
 class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
@@ -25,14 +20,12 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     private val path = Path()
 
-    internal var isErasing = false
+    private var isErasing = false
 
     private val paths = mutableListOf<PathData>()
 
     private var eraserSize = 50f
-
-    private var eraserX = 0f
-    private var eraserY = 0f
+    private var eraserRect: RectF = RectF()
 
     init {
         setLayerType(LAYER_TYPE_SOFTWARE, null)
@@ -41,14 +34,20 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+
         for (pathData in paths) {
             canvas.drawPath(pathData.path, pathData.paint)
         }
 
         if (isErasing) {
-            val eraserPath = Path()
-            eraserPath.addCircle(eraserX, eraserY, eraserSize / 2, Path.Direction.CW)
-            canvas.drawPath(eraserPath, paint.apply { color = Color.GRAY })
+            val eraserPaint = Paint()
+            eraserPaint.color = Color.GRAY
+            eraserPaint.alpha = 100
+            canvas.drawRect(eraserRect, eraserPaint)
+        }
+
+        if (!isErasing) {
+            canvas.drawPath(path, paint)
         }
     }
 
@@ -56,22 +55,20 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-                path.moveTo(event.x, event.y)
                 if (isErasing) {
-                    erasePathAtAsync(event.x, event.y)
+                    eraseAreaAt(event.x, event.y)
+                    path.reset()
+                } else {
+                    path.moveTo(event.x, event.y)
                 }
-                eraserX = event.x
-                eraserY = event.y
                 return true
             }
             MotionEvent.ACTION_MOVE -> {
                 if (isErasing) {
-                    erasePathAtAsync(event.x, event.y)
+                    eraseAreaAt(event.x, event.y)
                 } else {
                     path.lineTo(event.x, event.y)
                 }
-                eraserX = event.x
-                eraserY = event.y
             }
             MotionEvent.ACTION_UP -> {
                 if (!isErasing) {
@@ -86,20 +83,18 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     fun activateEraser() {
         isErasing = true
-        Toast.makeText(context, "Eraser Activated", Toast.LENGTH_SHORT).show()
+        showToast(R.string.eraser_active)
     }
 
-    fun deactivateEraser() {
+    fun switchToPenTool() {
         isErasing = false
-        Toast.makeText(context, "Eraser Deactivated", Toast.LENGTH_SHORT).show()
+        showToast(R.string.pen_tool_active)
     }
 
-    fun setColor(color: Int) {
-        if (!isErasing) {
-            paint.color = color
-            Toast.makeText(context, "Color changed to: ${getColorName(color)}", Toast.LENGTH_SHORT).show()
-        }
+    private fun showToast(messageResId: Int) {
+        Toast.makeText(context, context.getString(messageResId), Toast.LENGTH_SHORT).show()
     }
+
 
     fun closeDrawing() {
         path.reset()
@@ -107,53 +102,42 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         invalidate()
     }
 
-    private fun getColorName(color: Int): String {
-        return when (color) {
-            Color.BLACK -> "Black"
-            Color.RED -> "Red"
-            Color.GREEN -> "Green"
-            Color.BLUE -> "Blue"
-            Color.YELLOW -> "Yellow"
-            else -> "Custom Color"
-        }
-    }
-
-    private fun erasePathAtAsync(x: Float, y: Float) {
-        CoroutineScope(Dispatchers.IO).launch {
-            erasePathAt(x, y)
-            withContext(Dispatchers.Main) {
-                invalidate()
-            }
-        }
-    }
-
-    private fun erasePathAt(x: Float, y: Float) {
-        val iterator = paths.iterator()
-        while (iterator.hasNext()) {
-            val pathData = iterator.next()
-            val path = pathData.path
-
-            val pathMeasure = android.graphics.PathMeasure(path, false)
-            val distance = FloatArray(2)
-
-            var segmentDistance = 0f
-            while (pathMeasure.getPosTan(segmentDistance, distance, null)) {
-                val segmentX = distance[0]
-                val segmentY = distance[1]
-
-                val distanceToPath = sqrt((x - segmentX).toDouble().pow(2) + (y - segmentY).toDouble().pow(2))
-                if (distanceToPath <= eraserSize) {
-                    iterator.remove()
-                    return
-                }
-                segmentDistance += 5f
-            }
-        }
-    }
-
     fun setEraserSize(size: Float) {
         eraserSize = size
-        Toast.makeText(context, "Eraser size changed to: $size", Toast.LENGTH_SHORT).show()
+        val message = context.getString(R.string.eraser_size, size)
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun eraseAreaAt(x: Float, y: Float) {
+        eraserRect.set(x - eraserSize / 2, y - eraserSize / 2, x + eraserSize / 2, y + eraserSize / 2)
+
+        for (pathData in paths) {
+            val path = pathData.path
+
+            val pathMeasure = PathMeasure(path, false)
+            val pathLength = pathMeasure.length
+
+            var segmentDistance = 0f
+            val segmentStep = 5f
+
+            while (segmentDistance < pathLength) {
+                val coords = FloatArray(2)
+                pathMeasure.getPosTan(segmentDistance, coords, null)
+
+                val segmentX = coords[0]
+                val segmentY = coords[1]
+
+                if (eraserRect.contains(segmentX, segmentY)) {
+                    val newPath = Path()
+
+                    pathMeasure.getSegment(0f, segmentDistance, newPath, true)
+                    pathData.path.set(newPath)
+                }
+                segmentDistance += segmentStep
+            }
+        }
+
+        invalidate()
     }
 
     data class PathData(val path: Path, val paint: Paint)
