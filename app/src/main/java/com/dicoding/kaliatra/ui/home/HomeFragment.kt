@@ -1,5 +1,6 @@
 package com.dicoding.kaliatra.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.SeekBar
@@ -10,6 +11,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import com.dicoding.kaliatra.R
 import com.dicoding.kaliatra.databinding.FragmentHomeBinding
+import com.dicoding.kaliatra.ui.history.HistoryActivity
 
 class HomeFragment : Fragment() {
 
@@ -64,9 +66,11 @@ class HomeFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.action_history -> {
-                        // Handle menu item click here
+                        val intent = Intent(requireContext(), HistoryActivity::class.java)
+                        startActivity(intent)
                         true
                     }
+
                     else -> false
                 }
             }
