@@ -9,15 +9,16 @@
 
     <!-- Login dan onBoarding String -->
     <string name="lewati">Lewati</string>
-    <string name="welcome1">Selamat Datang di Kaliatra</string>
-    <string name="deskripsi1">Jelajahi dan terjemahkan aksara Bali dengan mudah menggunakan teknologi Machine Learning. Ubah aksara Bali menjadi teks yang lebih mudah dipahami, baik melalui kamera perangkat atau dengan menggambar aksara untuk diidentifikasi.</string>
+    <string name="title_text_onboarding_1">Selamat Datang di Kaliatra</string>
+    <string name="description_text_onboarding_1">Jelajahi dan terjemahkan aksara Bali dengan mudah menggunakan teknologi Machine Learning. Ubah aksara Bali menjadi teks yang lebih mudah dipahami, baik melalui kamera perangkat atau dengan menggambar aksara untuk diidentifikasi.</string>
     <string name="button_brush">Brush</string>
+    <string name="button_onboarding_next">Next</string>
     <string name="button_eraser">Eraser</string>
     <string name="button_clear">Clear</string>
-    <string name="onboardin2title">Gambar Aksara Bali</string>
-    <string name="desk2">Fitur ini memungkinkan Anda mengenali dan menerjemahkan aksara Bali dengan cepat. Cukup gambar aksara, dan hasilnya langsung muncul. Antarmuka yang sederhana akan membuat proses analisis efisien dan nyaman.</string>
-    <string name="titleonboardin3">Terjemahkan Aksara Bali</string>
-    <string name="desk3">Mengubah aksara Bali menjadi bentuk yang lebih mudah dibaca dan dimengerti. Gunakan fitur terjemahan instan kami untuk mengubah aksara Bali ke bahasa Indonesia dengan hasil yang akurat dan cepat.</string>
+    <string name="title_text_onboarding_2">Gambar Aksara Bali</string>
+    <string name="description_text_onboarding_2">Fitur ini memungkinkan Anda mengenali dan menerjemahkan aksara Bali dengan cepat. Cukup gambar aksara, dan hasilnya langsung muncul. Antarmuka yang sederhana akan membuat proses analisis efisien dan nyaman.</string>
+    <string name="title_text_onboarding_3">Terjemahkan Aksara Bali</string>
+    <string name="description_text_onboarding_3">Mengubah aksara Bali menjadi bentuk yang lebih mudah dibaca dan dimengerti. Gunakan fitur terjemahan instan kami untuk mengubah aksara Bali ke bahasa Indonesia dengan hasil yang akurat dan cepat.</string>
     <string name="title_text_Login">Masuk!</string>
     <string name="description_text_login">Aplikasi Kaliatra mewajibkan kamu untuk masuk menggunakan email google</string>
     <string name="agreement_text"><![CDATA[Dengan melakukan login maka kamu telah\nsetuju dengan Privacy Policy & Terms of Service]]></string>
@@ -66,4 +67,10 @@
     <string name="about_app">Tentang Aplikasi</string>
     <string name="log_out_icon">Log Out Icon</string>
     <string name="log_out">Keluar</string>
+    <string name="circle_one">Circle One</string>
+    <string name="circle_two">Circle Two</string>
+    <string name="circle_three">Circle Three</string>
+    <string name="img_onboarding_1">Image Onboarding 1</string>
+    <string name="img_onboarding_2">Image Onboarding 2</string>
+    <string name="img_onboarding_3">Image Onboarding 3</string>
 </resources>

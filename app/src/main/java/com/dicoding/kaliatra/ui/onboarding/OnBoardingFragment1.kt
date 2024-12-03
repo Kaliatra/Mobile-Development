@@ -25,11 +25,7 @@ class OnBoardingFragment1 : Fragment(R.layout.fragment_on_boarding1) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.textview3.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingFragment1_to_loginFragment)
-        }
-
-        binding.button.setOnClickListener {
+        binding.nextButton.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingFragment1_to_onBoardingFragment2)
         }
     }

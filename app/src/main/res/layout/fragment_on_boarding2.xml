@@ -6,130 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".ui.onboarding.OnBoardingFragment2">
 
-
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="598dp"
-        android:layout_height="457dp"
-        android:layout_gravity="center"
+        android:id="@+id/backgroundOnboarding"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
         android:background="@drawable/rounded_blue"
-        android:gravity="center"
+        android:clipToOutline="true"
+        android:clipToPadding="true"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:targetApi="s">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="440dp"
-            android:layout_height="401dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="6.8dp"
-            android:background="@drawable/half_circle_shape2"
-            android:clipToOutline="true"
-            android:importantForAccessibility="no"
-            android:scaleType="centerCrop"
-            android:src="@drawable/onboardingimage2"
-            tools:ignore="UnusedAttribute" />
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:contentDescription="@string/img_onboarding_2"
+            android:src="@drawable/img_onboarding_2" />
     </LinearLayout>
 
-
     <TextView
-        android:id="@+id/textview1"
-        android:layout_width="wrap_content"
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="28dp"
-        android:textAppearance="@style/TextAppearance.Montserrat.SemiBold"
-        android:text="@string/onboardin2title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="@string/title_text_onboarding_2"
+        android:textAppearance="@style/TextAppearance.Montserrat.Bold"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/backgroundOnboarding" />
 
     <TextView
-        android:id="@+id/textview2"
-        android:layout_width="349dp"
-        android:layout_height="94dp"
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="104dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:textAppearance="@style/TextAppearance.Montserrat.Regular"
+        android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:lineSpacingMultiplier="1.5"
-        android:text="@string/desk2"
+        android:text="@string/description_text_onboarding_2"
+        android:textAppearance="@style/TextAppearance.Montserrat.Regular"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview1"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="397dp"
+        android:id="@+id/buttonNavigation"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintStart_toStartOf="parent">
 
         <RelativeLayout
-            android:layout_width="114dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="82dp"
-            android:layout_marginEnd="58dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginBottom="13dp"
-            android:layout_toStartOf="@+id/button">
+            android:gravity="center">
 
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/circleOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:importantForAccessibility="no"
-                android:src="@drawable/baseline_circle2" />
+                android:contentDescription="@string/circle_one"
+                android:src="@drawable/ic_circle_white" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/circleTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/imageView1"
+                android:layout_alignTop="@id/circleOne"
                 android:layout_marginStart="10dp"
-                android:layout_toEndOf="@id/imageView1"
-                android:importantForAccessibility="no"
-                android:src="@drawable/baseline_circle_24" />
+                android:layout_toEndOf="@id/circleOne"
+                android:contentDescription="@string/circle_two"
+                android:src="@drawable/ic_circle_blue"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/circleThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/imageView2"
+                android:layout_alignTop="@id/circleTwo"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_toEndOf="@id/imageView2"
-                android:importantForAccessibility="no"
-                android:src="@drawable/baseline_circle2" />
-
+                android:layout_toEndOf="@id/circleTwo"
+                android:contentDescription="@string/circle_three"
+                android:src="@drawable/ic_circle_white" />
         </RelativeLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/nextButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="0dp"
-            android:background="@drawable/baseline_arrow_circle_right_24"
-            android:contentDescription="@string/button_brush" />
+            android:background="@drawable/ic_arrow_circle_right"
+            android:contentDescription="@string/button_onboarding_next" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

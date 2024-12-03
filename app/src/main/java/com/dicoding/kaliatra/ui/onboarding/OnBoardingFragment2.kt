@@ -25,7 +25,7 @@ class OnBoardingFragment2 : Fragment(R.layout.fragment_on_boarding2) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
+        binding.nextButton.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingFragment2_to_onBoardingFragment3)
         }
     }
