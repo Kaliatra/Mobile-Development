@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.SeekBar
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
 
         drawingView = binding.drawingView
 
-        val buttonEraser: Button = binding.buttoneraser
+        val buttonEraser: AppCompatImageButton = binding.buttonEraser
         buttonEraser.setOnClickListener {
             if (drawingView.isErasing) {
                 drawingView.deactivateEraser()
@@ -45,12 +46,12 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val buttonClear: Button = binding.buttonX
+        val buttonClear: AppCompatImageButton = binding.buttonClear
         buttonClear.setOnClickListener {
             drawingView.closeDrawing()
         }
 
-        val buttonColor: Button = binding.buttonColor
+        val buttonColor: AppCompatImageButton = binding.buttonBrush
         buttonColor.setOnClickListener {
             drawingView.setColor(getRandomColor())
         }
