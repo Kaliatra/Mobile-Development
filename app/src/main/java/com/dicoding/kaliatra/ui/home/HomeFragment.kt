@@ -29,6 +29,9 @@ class HomeFragment : Fragment() {
 
         drawingView = binding.drawingView
 
+        // Enable drawing view on interaction
+        drawingView.setDrawingViewActive(true)
+
         val buttonEraser: AppCompatImageButton = binding.buttonEraser
         buttonEraser.setOnClickListener {
             drawingView.activateEraser()

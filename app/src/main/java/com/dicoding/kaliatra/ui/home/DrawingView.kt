@@ -9,12 +9,15 @@ import android.view.View
 import android.widget.Toast
 import com.dicoding.kaliatra.R
 
+// PathData class to hold path and paint
+data class PathData(val path: Path, val paint: Paint)
+
 class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     private val paint = Paint().apply {
         color = Color.BLACK
         isAntiAlias = true
-        strokeWidth = 10f
+        strokeWidth = 50f
         style = Paint.Style.STROKE
     }
 
@@ -27,6 +30,8 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var eraserSize = 50f
     private var eraserRect: RectF = RectF()
 
+    private var isDrawingViewActive = false  // Flag to track if DrawingView is active
+
     init {
         setLayerType(LAYER_TYPE_SOFTWARE, null)
     }
@@ -35,10 +40,12 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
+        // Draw all the paths
         for (pathData in paths) {
             canvas.drawPath(pathData.path, pathData.paint)
         }
 
+        // Draw eraser area (highlight the area being erased)
         if (isErasing) {
             val eraserPaint = Paint()
             eraserPaint.color = Color.GRAY
@@ -46,6 +53,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
             canvas.drawRect(eraserRect, eraserPaint)
         }
 
+        // Draw the current path if not erasing
         if (!isErasing) {
             canvas.drawPath(path, paint)
         }
@@ -53,6 +61,10 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
+        if (!isDrawingViewActive) {
+            return false  // If DrawingView is not active, ignore touch events
+        }
+
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
                 if (isErasing) {
@@ -72,7 +84,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
             }
             MotionEvent.ACTION_UP -> {
                 if (!isErasing) {
-                    paths.add(PathData(Path(path), Paint(paint)))
+                    paths.add(PathData(Path(path), Paint(paint)))  // Add path to paths list
                 }
                 path.reset()
             }
@@ -82,19 +94,22 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     }
 
     fun activateEraser() {
-        isErasing = true
-        showToast(R.string.eraser_active)
+        if (isDrawingViewActive) {
+            isErasing = true
+            showToast(R.string.eraser_active)
+        }
     }
 
     fun switchToPenTool() {
-        isErasing = false
-        showToast(R.string.pen_tool_active)
+        if (isDrawingViewActive) {
+            isErasing = false
+            showToast(R.string.pen_tool_active)
+        }
     }
 
     private fun showToast(messageResId: Int) {
         Toast.makeText(context, context.getString(messageResId), Toast.LENGTH_SHORT).show()
     }
-
 
     fun closeDrawing() {
         path.reset()
@@ -140,5 +155,8 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         invalidate()
     }
 
-    data class PathData(val path: Path, val paint: Paint)
+    // New method to set the drawing view active state
+    fun setDrawingViewActive(isActive: Boolean) {
+        isDrawingViewActive = isActive
+    }
 }
