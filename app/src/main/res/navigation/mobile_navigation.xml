@@ -41,7 +41,7 @@
         android:label="Login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_onBoardingFragmentLogin_to_navigationHome"
+            android:id="@+id/action_FragmentLogin_to_navigationHome"
             app:destination="@id/navigation_home" />
     </fragment>
 
@@ -67,5 +67,9 @@
         android:id="@+id/navigation_profile"
         android:name="com.dicoding.kaliatra.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigationProfile_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

@@ -79,6 +79,9 @@
     <string name="button_delete_description">Button Delete</string>
     <string name="result_history">Hasil :</string>
     <string name="img_aksara_history">Image Aksara History</string>
+    <string name="loading">Harap Tunggu</string>
+    <string name="login_successful">Login Berhasil</string>
+    <string name="login_failed">Login gagal, Silakan coba lagi</string>
     <string name="category_name">Category Name</string>
     <string name="failed_to_load_data">Failed to load data</string>
     <string name="unknown_error">Unknown error occurred</string>

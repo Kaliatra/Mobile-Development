@@ -34,7 +34,10 @@ class DictionaryFragment : Fragment() {
             // Search for the first exact match based on 'tulisanlatin'
             val firstExactMatchPosition = entries.indexOfFirst {
                 if (it is DictionaryItem.DictionaryEntry) {
-                    it.data.tulisanlatin.equals(binding.searchView.query.toString(), ignoreCase = true)
+                    it.data.tulisanlatin.equals(
+                        binding.searchView.query.toString(),
+                        ignoreCase = true
+                    )
                 } else {
                     false
                 }

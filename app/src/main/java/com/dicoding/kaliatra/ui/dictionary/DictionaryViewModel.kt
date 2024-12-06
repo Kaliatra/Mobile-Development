@@ -6,9 +6,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.dicoding.kaliatra.R
-import com.dicoding.kaliatra.ui.dictionary.data.response.DataAllResponseItem
-import com.dicoding.kaliatra.ui.dictionary.data.retrofit.ApiConfig
-import com.dicoding.kaliatra.ui.dictionary.data.retrofit.ApiService
+import com.dicoding.kaliatra.remote.response.DataAllResponseItem
+import com.dicoding.kaliatra.remote.retrofit.ApiConfig
+import com.dicoding.kaliatra.remote.retrofit.ApiService
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -44,16 +44,19 @@ class DictionaryViewModel(application: Application) : AndroidViewModel(applicati
                     val grouped = allEntries.groupBy { it.category }.flatMap {
                         listOf(
                             DictionaryItem.CategoryHeader(it.key),
-                            *it.value.map { entry -> DictionaryItem.DictionaryEntry(entry) }.toTypedArray()
+                            *it.value.map { entry -> DictionaryItem.DictionaryEntry(entry) }
+                                .toTypedArray()
                         )
                     }
 
                     _filteredEntries.value = grouped
                 } else {
-                    _errorMessage.value = getApplication<Application>().getString(R.string.failed_to_load_data)
+                    _errorMessage.value =
+                        getApplication<Application>().getString(R.string.failed_to_load_data)
                 }
             } catch (e: Exception) {
-                _errorMessage.value = getApplication<Application>().getString(R.string.unknown_error)
+                _errorMessage.value =
+                    getApplication<Application>().getString(R.string.unknown_error)
             } finally {
                 _isLoading.value = false
             }

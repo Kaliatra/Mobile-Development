@@ -17,7 +17,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private val paint = Paint().apply {
         color = Color.BLACK
         isAntiAlias = true
-        strokeWidth = 50f
+        strokeWidth = 40f
         style = Paint.Style.STROKE
     }
 
