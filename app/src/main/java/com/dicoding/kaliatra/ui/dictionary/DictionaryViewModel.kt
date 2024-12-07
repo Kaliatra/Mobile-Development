@@ -6,15 +6,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.dicoding.kaliatra.R
+import com.dicoding.kaliatra.di.Injection
+import com.dicoding.kaliatra.remote.KaliatraRepository
 import com.dicoding.kaliatra.remote.response.DataAllResponseItem
-import com.dicoding.kaliatra.remote.retrofit.ApiConfig
-import com.dicoding.kaliatra.remote.retrofit.ApiService
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Response
 
 class DictionaryViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val repository: KaliatraRepository = Injection.provideRepository()
 
     private val _filteredEntries = MutableLiveData<List<DictionaryItem>>()
     val filteredEntries: LiveData<List<DictionaryItem>> get() = _filteredEntries
@@ -25,8 +26,6 @@ class DictionaryViewModel(application: Application) : AndroidViewModel(applicati
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
 
-    private val apiService: ApiService = ApiConfig.getApiService()
-
     private var allEntries = emptyList<DataAllResponseItem>()
 
     fun fetchAllDictionaryEntries() {
@@ -34,8 +33,8 @@ class DictionaryViewModel(application: Application) : AndroidViewModel(applicati
 
         viewModelScope.launch {
             try {
-                val response: Response<List<DataAllResponseItem>> = withContext(Dispatchers.IO) {
-                    apiService.getAllDictionaryEntries()
+                val response = withContext(Dispatchers.IO) {
+                    repository.getAllDictionaryEntries()
                 }
 
                 if (response.isSuccessful) {

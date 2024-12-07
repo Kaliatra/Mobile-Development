@@ -3,9 +3,9 @@
     android:id="@+id/category_header"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="left"
+    android:layout_gravity="start"
     android:paddingStart="16dp"
     android:paddingTop="20dp"
     android:textSize="16sp"
     android:textStyle="bold"
-    tools:ignore="RtlHardcoded,RtlSymmetry" />
+    tools:ignore="RtlSymmetry" />

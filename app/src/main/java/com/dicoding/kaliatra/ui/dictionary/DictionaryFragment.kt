@@ -31,7 +31,6 @@ class DictionaryFragment : Fragment() {
 
             val layoutManager = binding.recyclerViewDictionary.layoutManager as LinearLayoutManager
 
-            // Search for the first exact match based on 'tulisanlatin'
             val firstExactMatchPosition = entries.indexOfFirst {
                 if (it is DictionaryItem.DictionaryEntry) {
                     it.data.tulisanlatin.equals(
