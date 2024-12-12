@@ -96,7 +96,8 @@ The Kaliatra mobile app brings the power of **Balinese Aksara translation** to y
 
 | **Home Screen** | **Translation Result** | **History Feature** |
 |:---------------:|:----------------------:|:-------------------:|
-| ![Home Screen](link-to-home-screenshot) | ![Result](link-to-result-screenshot) | ![History](link-to-history-screenshot) |
+| ![WhatsApp Image 2024-12-12 at 22 46 11_4ee48d06](https://github.com/user-attachments/assets/c2f5ea9a-f717-4c59-8065-20cd109bde7b)
+ | ![Result](link-to-result-screenshot) | ![History](link-to-history-screenshot) |
 
 ---
 
