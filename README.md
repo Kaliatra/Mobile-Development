@@ -25,41 +25,70 @@ The Kaliatra mobile app brings the power of **Balinese Aksara translation** to y
 
 #### **Key Features:**
 
-- 🔍 **Aksara Detection & Translation**: Instantly translate Balinese script (Aksara Bali) into Latin characters.
-- 📚 **History Log**: Keep track of your translation history using **Google Cloud Platform (GCP)**.
-- 🔒 **Secure Authentication**: Manage user sign-ins securely with **Firebase Authentication**.
-- 🖌️ **Intuitive Drawing Interface**: Draw Balinese characters directly in the app and get real-time translations.
+1. 🔍 **Aksara Detection & Translation**: Instantly translate Balinese script (Aksara Bali) into Latin characters.
+2. 📚 **History Log**: Keep track of your translation history using **Google Cloud Platform (GCP)**.
+3. 🔒 **Secure Authentication**: Manage user sign-ins securely with **Firebase Authentication**.
+4. 🖌️ **Intuitive Drawing Interface**: Draw Balinese characters directly in the app and get real-time translations.
+5. 📖 **Balinese Script Dictionary**: Access a comprehensive library of Balinese Aksara and their Latin equivalents.
 
 ---
 
 ## 🛠️ **Tools & Technologies**
 
-We leverage industry-standard tools to create a high-quality mobile app:
-
-- **Android Studio**: For coding, debugging, and testing the app.
-- **Kotlin**: Modern, expressive programming language for Android development.
-- **Firebase**: For user authentication and secure sign-in.
-- **Google Cloud Platform (GCP)**: For storing and managing translation history.
-- **Figma**: For collaborative UI/UX design and prototyping.
-- **GitHub**: For version control and team collaboration.
+| **Category**               | **Technology/Library**           |
+|-----------------------------|----------------------------------|
+| **Minimum SDK Level**      | Android SDK Level 24             |
+| **Programming Language**   | 100% Kotlin                      |
+| **Architecture**           | MVVM (Model-View-ViewModel)      |
+| **Dependency Injection**   | Dagger Hilt                      |
+| **Network Requests**       | Retrofit                         |
+| **JSON Parsing**           | Moshi                            |
+| **Asynchronous Programming** | Kotlin Coroutines              |
+| **UI Development**         | Material UI Components           |
+| **Navigation**             | Bottom Navigation                |
+| **Database Storage**       | Google Cloud and Firebase        |
 
 ---
 
-## 🚀 **How to Install the App**
+## 🚀 **Getting Started**
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/kaliatra-mobile.git
+### **Prerequisites**
+
+- ✅ **Android Device**  
+- 🌐 **Internet Connection**  
+- 📷 **Camera Access**  
+
+---
+
+## 📲 **How to Install the Kaliatra App**
+
+### 🔹 **Download the Kaliatra APK**
+
+[![Download APK](link-to-apk-image)](link-to-apk)
+
+### 🔹 **If Downloading via GitHub**
+
+1. Download the `google-services.json` file from our Drive link.  
+2. Place it in the following directory:  
+   ```
+   project/Kaliatra/app/
    ```
 
-2. Open the project in **Android Studio**.
+3. Install the app and start learning the Balinese language!
 
-3. Build and run the project on an Android emulator or device:
-   ```bash
-   Run > Run 'app'
-   ```
+---
 
-4. Sign in with your credentials and start translating Aksara Bali!
+## 📲 **Kaliatra App Features**
+
+| **No.** | **Feature**                  | **Description**                                                                                      |
+|----------|------------------------------|------------------------------------------------------------------------------------------------------|
+| **1**   | **Onboarding**               | Begin your Kaliatra journey with an interactive onboarding experience.                              |
+| **2**   | **Splash Screen Introduction** | Enjoy a visually appealing splash screen that introduces Kaliatra’s purpose and core features.      |
+| **3**   | **Scan Recognition**         | Use your camera to scan Balinese script. Get real-time recognition results using machine learning.  |
+| **4**   | **Balinese Script Dictionary** | Explore a comprehensive dictionary of Balinese characters with pronunciations and explanations.    |
+| **5**   | **Handwriting Analysis**     | Draw Balinese script using our handwriting tool. Get instant analysis and identification.           |
+| **6**   | **User Sign-In/Sign-Out**    | Securely sign in or out to personalize your experience with Firebase Authentication.                |
+| **7**   | **History of Results**       | Track your past scans and handwriting analyses using Google Cloud Platform (GCP).                   |
 
 ---
 
@@ -92,17 +121,10 @@ Want to improve Kaliatra? We'd love your contributions!
 
 ---
 
-## 🌐 **Stay Connected**
-
-- **Email**: [team.kaliatra@stikom-bali.ac.id](mailto:team.kaliatra@stikom-bali.ac.id)
-- **Instagram**: [@kaliatra.app](https://instagram.com/kaliatra.app)
-
----
-
 📜 *Preserve. Connect. Innovate.*  
 *Kaliatra: Where Tradition Meets Technology* 🌺
 
---- 
+---
 
 ### 🎉 **Thank You for Visiting!**  
 *Let's keep Balinese culture alive, together!*
