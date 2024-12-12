@@ -1,13 +1,10 @@
 <resources>
-    <!-- General Strings -->
     <string name="app_name">Kaliatra</string>
     <string name="gallery">Galeri</string>
     <string name="analyze">Analisis</string>
     <string name="camera">Kamera</string>
     <string name="preview_image">Gambar Pratinjau</string>
     <string name="history">Riwayat</string>
-
-    <!-- Login dan onBoarding String -->
     <string name="lewati">Lewati</string>
     <string name="title_text_onboarding_1">Selamat Datang di Kaliatra</string>
     <string name="description_text_onboarding_1">Jelajahi dan terjemahkan aksara Bali dengan mudah menggunakan teknologi Machine Learning. Ubah aksara Bali menjadi teks yang lebih mudah dipahami, baik melalui kamera perangkat atau dengan menggambar aksara untuk diidentifikasi.</string>
@@ -30,59 +27,73 @@
     <string name="scan_title">Pindai</string>
     <string name="dictionary_title">Kamus</string>
     <string name="profile_title">Akun</string>
-
-    <!-- Home Fragment Strings -->
     <string name="title_home">Beranda</string>
-
-    <!-- Scan Fragment Strings -->
+    <string name="no_drawing_found">Harap gambar terlebih dahulu</string>
+    <string name="no_prediction_found">Tidak ada prediksi yang ditemukan.</string>
+    <string name="toast_file_creation_failed">Pembuatan file gagal atau file kosong.</string>
+    <string name="toast_error_uploading_file">Kesalahan saat mengunggah file</string>
+    <string name="toast_token_not_found">Token tidak ditemukan atau sudah kadaluarsa. Pastikan Anda sudah login.</string>
+    <string name="toast_error_message">Kesalahan: %1$s</string>
+    <string name="toast_error_message_default">Terjadi kesalahan yang tidak diketahui</string>
     <string name="title_scan">Pindai</string>
     <string name="title_text_scan">Pindai Aksara Bali</string>
     <string name="description_text_scan">Gunakan kamera atau pilih gambar dari galeri untuk memindai aksara Bali yang ingin diterjemahkan</string>
-
-    <!-- Dictionary Fragment Strings -->
     <string name="title_dictionary">Kamus</string>
-
-    <!-- Profile Fragment Strings -->
     <string name="title_profile">Akun</string>
-
-    <!-- Result Fragment Strings -->
     <string name="result">Hasil Analisis</string>
     <string name="title_text_result">Hasil Analisis Aksara Bali</string>
     <string name="description_text_result">Dibawah ini merupakan hasil analisi aksara bali yang sudah kamu gambar, foto atau ambil dari galeri</string>
-    <string name="dictionary_photo">foto kamus</string>
-
-
+    <string name="dictionary_photo">Foto Kamus</string>
     <string name="search_hint">Cari Aksara Bali</string>
-    <string name="profile_picture_placeholder">Profile Picture</string>
-    <string name="profile_name_placeholder">John Doe</string>
-    <string name="profile_email_placeholder">johndoe132@gmail.com</string>
-    <string name="dark_mode_icon">Icon dark Mode\n</string>
-    <string name="dark_mode">Mode Gelap</string>
-    <string name="dark_mode_subtitle">Aktifkan tema menjadi mode gelap</string>
-    <string name="change_language_icon">Icon Change Language</string>
-    <string name="change_language">Ubah Bahasa</string>
-    <string name="change_language_subtitle">Ubah bahasa pada aplikasi</string>
-    <string name="arrow_icon">Arrow Icon</string>
-    <string name="about_app_icon">About App Icon</string>
+    <string name="profile_picture_placeholder">Foto Profil</string>
+    <string name="profile_name_placeholder">Nama Pengguna</string>
+    <string name="profile_email_placeholder">emailpengguna@example.com</string>
+    <string name="change_language_icon">Ikon Ubah Bahasa</string>
+    <string name="change_language">Bahasa Aplikasi</string>
+    <string name="change_language_subtitle">Indonesia</string>
+    <string name="arrow_icon">Ikon Panah</string>
+    <string name="about_app_icon">Ikon Tentang Aplikasi</string>
     <string name="about_app">Tentang Aplikasi</string>
-    <string name="log_out_icon">Log Out Icon</string>
+    <string name="log_out_icon">Ikon Keluar</string>
     <string name="log_out">Keluar</string>
-    <string name="circle_one">Circle One</string>
-    <string name="circle_two">Circle Two</string>
-    <string name="circle_three">Circle Three</string>
-    <string name="img_onboarding_1">Image Onboarding 1</string>
-    <string name="img_onboarding_2">Image Onboarding 2</string>
-    <string name="img_onboarding_3">Image Onboarding 3</string>
+    <string name="circle_one">Lingkaran Satu</string>
+    <string name="circle_two">Lingkaran Dua</string>
+    <string name="circle_three">Lingkaran Tiga</string>
+    <string name="img_onboarding_1">Gambar Onboarding 1</string>
+    <string name="img_onboarding_2">Gambar Onboarding 2</string>
+    <string name="img_onboarding_3">Gambar Onboarding 3</string>
     <string name="eraser_active">Penghapus Aktif</string>
     <string name="pen_tool_active">Alat Pena Aktif</string>
-    <string name="eraser_size">Ukuran Penghapus: %1$.2f</string>
-    <string name="button_delete_description">Button Delete</string>
+    <string name="button_delete_description">Hapus Tombol</string>
     <string name="result_history">Hasil :</string>
-    <string name="img_aksara_history">Image Aksara History</string>
+    <string name="img_aksara_history">Gambar Aksara Riwayat</string>
     <string name="loading">Harap Tunggu</string>
     <string name="login_successful">Login Berhasil</string>
     <string name="login_failed">Login gagal, Silakan coba lagi</string>
-    <string name="category_name">Category Name</string>
-    <string name="failed_to_load_data">Failed to load data</string>
-    <string name="unknown_error">Unknown error occurred</string>
+    <string name="category_name">Nama Kategori</string>
+    <string name="failed_to_load_data">Gagal memuat data</string>
+    <string name="unknown_error">Terjadi kesalahan yang tidak diketahui</string>
+    <string name="select_image_first">Harap pilih gambar terlebih dahulu</string>
+    <string name="no_result_available">Tidak ada hasil yang tersedia</string>
+    <string name="result_text">Prediksi: %1$s</string>
+    <string name="delete_successful">Berhasil dihapus</string>
+    <string name="delete_failed">Gagal menghapus</string>
+    <string name="no_data_available">Tidak ada data</string>
+    <string name="token_not_found">Token tidak ditemukan</string>
+    <string name="history_title">Riwayat Prediksi</string>
+    <string name="no_history">Tidak Ada Riwayat Prediksi</string>
+    <string name="confirm_logout_title">Konfirmasi Keluar</string>
+    <string name="confirm_logout_message">Apakah Anda yakin ingin keluar?</string>
+    <string name="no">Tidak</string>
+    <string name="yes">Iya</string>
+    <string name="about_apps_title">Tentang Aplikasi</string>
+    <string name="result_title">Hasil</string>
+    <string name="about_apps_paragraph_1">Kaliatra adalah aplikasi scanner atau penerjemah Aksara Bali yang dibuat demi menjembatani tulisan tradisional Bali dengan teknologi modern. Dengan menggunakan teknologi Machine Learning, Cloud Computing dan dibungkus dengan Mobile Development, aplikasi Kaliatra memungkinkan pengguna melakukan penerjemahan aksara Bali dengan akurat.</string>
+    <string name="about_apps_paragraph_2">Di era digital yang semakin maju, pelestarian budaya daerah menjadi hal yang patut dilestarikan dan diabadikan. Kaliatra hadir sebagai salah satu solusi untuk mendukung pelestarian tersebut dengan mengemas proses belajar aksara Bali dengan teknologi yang mutakhir. Aplikasi ini dapat membantu siapa saja dalam memahami dan mempelajari Aksara Bali, baik itu dari sisi pendidikan, pengembangan diri, ataupun wisatawan.</string>
+    <string name="about_apps_paragraph_3">Dengan interface yang ramah pengguna, serta fitur translasi yang berbasis Machine Learning, Kaliatra memastikan Aksara Bali dapat diakses dengan mudah oleh generasi muda di masa mendatang. Harapannya, aplikasi ini dapat mendorong Aksara Bali agar tetap bertahan di tengah derasnya arus globalisasi.</string>
+    <string name="select_language">Pilih Bahasa</string>
+    <string name="subtitle_language_english">English</string>
+    <string name="subtitle_language_indonesia">Indonesia</string>
+    <string name="language_changed">Bahasa diatur ke %1$s</string>
+    <string name="cancel">Cancel</string>
 </resources>

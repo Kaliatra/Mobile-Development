@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +6,12 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ui.result.ResultActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="?actionBarSize" />
 
     <TextView
         android:id="@+id/titleTextView"
@@ -31,15 +36,15 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
         android:text="@string/description_text_result"
-        android:textSize="16sp"
         android:textAppearance="@style/TextAppearance.Montserrat.Italic"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
-    <ImageView
-        android:id="@+id/result_image"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerImage"
         android:layout_width="0dp"
         android:layout_height="400dp"
         android:layout_marginStart="15dp"
@@ -48,8 +53,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
-        app:srcCompat="@drawable/ic_preview_image" />
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shimmerImage">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/dark_blue" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <ImageView
+        android:id="@+id/result_image"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView" />
 
     <TextView
         android:id="@+id/result_text"
@@ -59,7 +100,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
         android:text="@string/result"
-        android:textSize="20sp"
+        android:textSize="18sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/result_image" />

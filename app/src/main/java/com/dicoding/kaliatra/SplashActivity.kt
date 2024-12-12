@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.dicoding.kaliatra.utils.LocaleHelper
+import com.dicoding.kaliatra.utils.PreferenceManager
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
@@ -12,6 +14,9 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val savedLanguage = PreferenceManager.getSavedLanguage(this)
+        LocaleHelper.setLocale(this, savedLanguage)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 

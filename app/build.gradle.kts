@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp") version "1.9.10-1.0.13"
     id("com.google.gms.google-services") version "4.4.2"
+    id("kotlin-parcelize")
 }
 
 android {
@@ -22,6 +23,12 @@ android {
             "String",
             "DEFAULT_WEB_CLIENT_ID",
             "\"852069596535-l7o6j1vu683khumn7gd7m7cb2peeikur.apps.googleusercontent.com\""
+        )
+        buildConfigField("String", "KALIATRA_BASE_URL", "\"https://kaliatra.et.r.appspot.com/\"")
+        buildConfigField(
+            "String",
+            "PREDICTION_BASE_URL",
+            "\"https://model-api-852069596535.asia-southeast2.run.app\""
         )
     }
 
@@ -88,10 +95,13 @@ dependencies {
     // OkHttp Logging Interceptor
     implementation(libs.logging.interceptor)
 
-    // Google Auth
+    // Firebase auth
     implementation(libs.play.services.auth)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth.ktx)
     implementation(libs.play.services.auth)
     implementation(libs.firebase.firestore.ktx)
+
+    // Shimmer
+    implementation(libs.shimmer)
 }

@@ -8,14 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.dicoding.kaliatra.R
 import com.dicoding.kaliatra.di.Injection
 import com.dicoding.kaliatra.remote.KaliatraRepository
-import com.dicoding.kaliatra.remote.response.DataAllResponseItem
+import com.dicoding.kaliatra.remote.response.DictionaryResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class DictionaryViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository: KaliatraRepository = Injection.provideRepository()
+    private val repository: KaliatraRepository = Injection.provideDictionaryRepository()
 
     private val _filteredEntries = MutableLiveData<List<DictionaryItem>>()
     val filteredEntries: LiveData<List<DictionaryItem>> get() = _filteredEntries
@@ -26,20 +26,17 @@ class DictionaryViewModel(application: Application) : AndroidViewModel(applicati
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
 
-    private var allEntries = emptyList<DataAllResponseItem>()
+    private var allEntries = emptyList<DictionaryResponse>()
 
     fun fetchAllDictionaryEntries() {
         _isLoading.value = true
-
         viewModelScope.launch {
             try {
                 val response = withContext(Dispatchers.IO) {
                     repository.getAllDictionaryEntries()
                 }
-
                 if (response.isSuccessful) {
                     allEntries = response.body() ?: emptyList()
-
                     val grouped = allEntries.groupBy { it.category }.flatMap {
                         listOf(
                             DictionaryItem.CategoryHeader(it.key),
@@ -47,7 +44,6 @@ class DictionaryViewModel(application: Application) : AndroidViewModel(applicati
                                 .toTypedArray()
                         )
                     }
-
                     _filteredEntries.value = grouped
                 } else {
                     _errorMessage.value =
@@ -78,7 +74,7 @@ class DictionaryViewModel(application: Application) : AndroidViewModel(applicati
                     it.category.contains(query, ignoreCase = true)
         }
 
-        val sortedList = filteredList.sortedWith(compareByDescending<DataAllResponseItem> {
+        val sortedList = filteredList.sortedWith(compareByDescending<DictionaryResponse> {
             it.tulisanlatin.equals(query, ignoreCase = true)
         }.thenByDescending {
             it.tulisanlatin.startsWith(query, ignoreCase = true)
