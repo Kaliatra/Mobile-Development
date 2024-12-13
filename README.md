@@ -63,8 +63,7 @@ The Kaliatra mobile app brings the power of **Balinese Aksara translation** to y
 ## 📲 **How to Install the Kaliatra App**
 
 ### 🔹 **Download the Kaliatra APK**
-
-[![Download APK](link-to-apk-image)](https://drive.google.com/file/d/1xAHuGfh0j46hXMV1HKSKcvKn6Ihdwuxi/view?usp=drive_link)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Download APK](https://drive.google.com/file/d/1xAHuGfh0j46hXMV1HKSKcvKn6Ihdwuxi/view?usp=drive_link)
 
 ### 🔹 **If Downloading via GitHub**
 
