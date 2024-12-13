@@ -35,18 +35,18 @@ The Kaliatra mobile app brings the power of **Balinese Aksara translation** to y
 
 ## 🛠️ **Tools & Technologies**
 
-| **Category**               | **Technology/Library**           |
+| **Category**                | **Technology/Library**           |
 |-----------------------------|----------------------------------|
-| **Minimum SDK Level**      | Android SDK Level 24             |
-| **Programming Language**   | 100% Kotlin                      |
-| **Architecture**           | MVVM (Model-View-ViewModel)      |
-| **Dependency Injection**   | Dagger Hilt                      |
-| **Network Requests**       | Retrofit                         |
-| **JSON Parsing**           | Moshi                            |
-| **Asynchronous Programming** | Kotlin Coroutines              |
-| **UI Development**         | Material UI Components           |
-| **Navigation**             | Bottom Navigation                |
-| **Database Storage**       | Google Cloud and Firebase        |
+| **Minimum SDK Level**       | Android SDK Level 24             |
+| **Programming Language**    | 100% Kotlin                      |
+| **Architecture**            | MVVM (Model-View-ViewModel)      |
+| **Dependency Injection**    | Manual Dependency Injection      |
+| **Network Requests**        | Retrofit                         |
+| **JSON Parsing**            | POJO Generator                   |
+| **Asynchronous Programming**| Kotlin Coroutines                |
+| **UI Development**          | Material UI Components           |
+| **Navigation**              | Bottom Navigation                |
+| **Database Storage**        | Google Cloud and Firebase        |
 
 ---
 
@@ -64,7 +64,7 @@ The Kaliatra mobile app brings the power of **Balinese Aksara translation** to y
 
 ### 🔹 **Download the Kaliatra APK**
 
-[![Download APK](link-to-apk-image)](https://drive.google.com/file/d/1ErjUfSrbXGstJK-T2pFPTAYImldepxv8/view?usp=drivesdk)
+[![Download APK](link-to-apk-image)](https://drive.google.com/file/d/1xAHuGfh0j46hXMV1HKSKcvKn6Ihdwuxi/view?usp=drive_link)
 
 ### 🔹 **If Downloading via GitHub**
 
@@ -80,15 +80,16 @@ The Kaliatra mobile app brings the power of **Balinese Aksara translation** to y
 
 ## 📲 **Kaliatra App Features**
 
-| **No.** | **Feature**                  | **Description**                                                                                      |
-|----------|------------------------------|------------------------------------------------------------------------------------------------------|
-| **1**   | **Onboarding**               | Begin your Kaliatra journey with an interactive onboarding experience.                              |
-| **2**   | **Splash Screen Introduction** | Enjoy a visually appealing splash screen that introduces Kaliatra’s purpose and core features.      |
-| **3**   | **Scan Recognition**         | Use your camera to scan Balinese script. Get real-time recognition results using machine learning.  |
-| **4**   | **Balinese Script Dictionary** | Explore a comprehensive dictionary of Balinese characters with pronunciations and explanations.    |
-| **5**   | **Handwriting Analysis**     | Draw Balinese script using our handwriting tool. Get instant analysis and identification.           |
-| **6**   | **User Sign-In/Sign-Out**    | Securely sign in or out to personalize your experience with Firebase Authentication.                |
-| **7**   | **History of Results**       | Track your past scans and handwriting analyses using Google Cloud Platform (GCP).                   |
+| **No.**  | **Feature**                    | **Description**                                                                                      |
+|----------|--------------------------------|------------------------------------------------------------------------------------------------------|
+| **1**    | **Splash Screen Introduction** | Enjoy a visually appealing splash screen that introduces Kaliatra’s purpose and core features.       |
+| **2**    | **Onboarding**                 | Begin your Kaliatra journey with an interactive onboarding experience.                               |
+| **3**    | **User Sign-In/Sign-Out**      | Securely sign in or out to personalize your experience with Firebase Authentication.                 |
+| **4**    | **Handwriting Analysis**       | Draw Balinese script using our handwriting tool. Get instant analysis and identification.            |
+| **5**    | **Scan Recognition**           | Use your camera to scan Balinese script. Get real-time recognition results using machine learning.   |
+| **6**    | **Balinese Script Dictionary** | Explore a comprehensive dictionary of Balinese characters with pronunciations and explanations.      |
+| **7**    | **Profile**                    | View your account details, change the app language, and learn more about the application.            |
+| **8**    | **History of Results**         | Track your past scans and handwriting analyses using Google Cloud Platform (GCP).                    |
 
 ---
 
